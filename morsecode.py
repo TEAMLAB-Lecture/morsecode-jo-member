@@ -92,12 +92,18 @@ def is_validated_english_sentence(user_input):
             result = False
         if s in '.,!?':
             cnt+=1
-    if cnt==len(user_input):
-        result = False
-
+    if cnt==len(user_input) or user_input.count(' ')==len(user_input):
+        result =False
 
     return result
     # ==================================
+print(is_validated_english_sentence("!_X_!"))
+print(is_validated_english_sentence(".$."))
+print(is_validated_english_sentence("Base_ball"))
+print(is_validated_english_sentence("def main()"))
+print(is_validated_english_sentence("..."))
+print(is_validated_english_sentence(""))
+print(is_validated_english_sentence("   "))
 
 def is_validated_morse_code(user_input):
     """
